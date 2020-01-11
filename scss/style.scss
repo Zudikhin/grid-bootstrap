@@ -1,0 +1,23 @@
+@import "vars";
+@import "base";
+@import "grid";
+
+
+@for $i from 1 through $cols {
+	.col-#{$i} {
+		flex-basis: $i * 100% / $cols;
+		max-width: $i * 100% / $cols;
+	}
+}
+
+@each $suffix, $width in $breakpoints {
+	@media screen and (min-width: $width) {
+		@for $i from 1 through $cols {
+			.col-#{$suffix}-#{$i} {
+				flex-basis: $i * 100% / $cols;
+				max-width: $i * 100% / $cols;
+			}
+		}
+	}
+}
+
