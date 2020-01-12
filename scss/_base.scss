@@ -4,25 +4,30 @@ html,body {
 }
 .container, .container-fluid {
 	max-width: $container-width;
-	margin: 0 auto;
-	padding: 0 $gap;
+	margin-left: auto;
+	margin-right: auto;
 	box-sizing: border-box;
+	padding-right: $gap;
+  	padding-left: $gap;
 }
 .container-fluid {
 	max-width: 100%;
 }
+
 .row {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: -$gap !important;
-	margin-right: -$gap !important;
+  	display: -ms-flexbox;
+  	display: flex;
+  	-ms-flex-wrap: wrap;
+  	flex-wrap: wrap;
+  	margin-right: -$gap !important;
+  	margin-left: -$gap !important;
 }
+
 .col, *[class*="col-"] {
 	position: relative;
-	padding: 0 $gap;
-	box-sizing: border-box;
+  	width: 100%;
+  	padding-right: $gap;
+  	padding-left: $gap;
 }
 .col {
 	flex-grow: 1;

@@ -1,12 +1,16 @@
 @import "vars";
 @import "base";
 @import "grid";
-
+@import "breakpoints";
 
 @for $i from 1 through $cols {
 	.col-#{$i} {
-		flex-basis: $i * 100% / $cols;
+		-ms-flex: 0 0 $i * 100% / $cols;
+		flex: 0 0 $i * 100% / $cols;
 		max-width: $i * 100% / $cols;
+	}
+	.offset-#{$i} {
+		margin-left: $i * 100% / $cols;
 	}
 }
 
@@ -14,8 +18,12 @@
 	@media screen and (min-width: $width) {
 		@for $i from 1 through $cols {
 			.col-#{$suffix}-#{$i} {
-				flex-basis: $i * 100% / $cols;
+				-ms-flex: 0 0 $i * 100% / $cols;
+				flex: 0 0 $i * 100% / $cols;
 				max-width: $i * 100% / $cols;
+			}
+			.offset-#{$suffix}-#{$i} {
+				margin-left: $i * 100% / $cols;
 			}
 		}
 	}
